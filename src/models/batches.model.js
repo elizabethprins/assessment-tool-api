@@ -13,14 +13,14 @@ module.exports = function (app) {
   authorId: { type: Schema.Types.ObjectId, ref: 'users' },
   });
 
-  const studentSchema = new schema({
+  const studentSchema = new Schema({
     assessments: [assessmentSchema],
     firstName: { type: String },
     lastName: { type: String },
     imageURL: { type: String },
   });
 
-  const batches = new schema({
+  const batches = new Schema({
     students: [studentSchema],
     batchNumber:{ type: Number },
     startDate: { type: Date },
