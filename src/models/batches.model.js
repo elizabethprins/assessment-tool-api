@@ -10,6 +10,7 @@ module.exports = function (app) {
   date: { type: Date },
   colourCode: { type: Number },
   remarks: { type: String },
+  authorId: { type: Schema.Types.ObjectId, ref: 'users' },
   });
 
   const studentSchema = new schema({
