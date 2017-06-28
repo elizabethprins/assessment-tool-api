@@ -22,9 +22,9 @@ module.exports = function (app) {
 
   const batches = new Schema({
     students: [studentSchema],
-    batchNumber:{ type: Number },
-    startDate: { type: Date },
-    endDate: { type: Date },
+    batchNumber:{ type: Number, unique: true, required: true },
+    startDate: { type: Date, required: true },
+    endDate: { type: Date, required: true },
   });
 
   return mongooseClient.model('batches', batches);
