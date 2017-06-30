@@ -1,13 +1,15 @@
 
 
+const joinBatch = require('../../hooks/join-batch');
+
 module.exports = {
   before: {
     all: [],
     find: [],
     get: [],
     create: [],
-    update: [],
-    patch: [],
+    update: [joinBatch()],
+    patch: [joinBatch()],
     remove: []
   },
 
